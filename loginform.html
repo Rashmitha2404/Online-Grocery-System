@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/740/015/small_2x/supermarket-aisle-and-shelves-interior-blurred-background-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+             background-color: rgba(0, 0, 0, 0.5);
+            color: #ffe6ff;
+            padding: 20px;
+            text-align: center;
+        }
+	 nav {
+    	     display: flex;
+             justify-content: right;
+             margin-top: 20px;
+	    }
+
+	nav a {
+    	color: #fff;
+    	text-decoration: none;
+    	margin: 0 10px;
+    	transition: transform 0.2s ease; /* Adding transition for smooth transformation */
+}
+
+/* Adding hover effect */
+nav a:hover {
+    color: #ffd700; /* Change the color when hovering */
+    transform: scale(1.1); /* Scale the link slightly on hover */
+}
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"],
+        form input[type="reset"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        form input[type="submit"]:hover,
+        form input[type="reset"]:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["uname"].value;
+            var password = document.forms["loginForm"]["pwd"].value;
+            
+            // Check if username is empty
+            if (username.trim() === "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            
+            // Check if password is empty
+            if (password.trim() === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+            
+            // Username validation
+            if (username.length < 6) {
+                alert("Username should be minimum 6 characters");
+                return false;
+            }
+            
+            // Password validation
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password should be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character.");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Login</h1>
+	<nav>
+            <a href="home2.html">Home</a>
+        </nav>
+    </header>
+
+    <form name="loginForm" method="POST" action="login.jsp" onsubmit="return validateForm()">
+        <h2>Login Form</h2>
+        Enter UserName: <input type="text" name="uname"/><br>
+        Enter Password: <input type="password" name="pwd"/><br>
+        <input type="submit"/> <input type="reset"/><br>
+	 <h3>If you are a new user click here <a href="registerform.html">Signup</a></h3>
+    </form>
+
+    <footer>
+       <p>Credentials:Gudepu Rashmitha</p>
+	<p>	      22761A0585</p>
+    </footer>
+</body>
+</html>

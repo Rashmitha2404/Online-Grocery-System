@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+	background-image: url('https://milesopedia.com/wp-content/uploads/2023/10/Epicerie-bas-prix.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+}
+header {
+             background-color: #9090EE;
+            color: #ffe6ff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+    	     display: flex;
+             justify-content: right;
+             margin-top: 20px;
+	    }
+
+	nav a {
+    	color: #fff;
+    	text-decoration: none;
+    	margin: 0 10px;
+    	transition: transform 0.2s ease; /* Adding transition for smooth transformation */
+}
+
+/* Adding hover effect */
+nav a:hover {
+    color: #ffd700; /* Change the color when hovering */
+    transform: scale(1.1); /* Scale the link slightly on hover */
+}
+footer {
+           background-color: #9090EE;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.phone-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4caf50;
+    margin-top: 10px;
+}

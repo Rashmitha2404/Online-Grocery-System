@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store Registration Form</title>
+    <style>
+        /* Basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1356462798/photo/supermarket-grocery-store-interior-aisle-abstract-blurred-background.jpg?s=612x612&w=0&k=20&c=gviIIA6sz_xN0IByusHTkoZGyfap8Qd0CgDh320VtOQ=');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+             background-color: rgba(0, 0, 0, 0.5);
+            color: #ffe6ff;
+            padding: 20px;
+            text-align: center;
+        }
+nav {
+    	     display: flex;
+             justify-content: right;
+             margin-top: 20px;
+	    }
+
+	nav a {
+    	color: #fff;
+    	text-decoration: none;
+    	margin: 0 10px;
+    	transition: transform 0.2s ease; /* Adding transition for smooth transformation */
+}
+
+/* Adding hover effect */
+nav a:hover {
+    color: #ffd700; /* Change the color when hovering */
+    transform: scale(1.1); /* Scale the link slightly on hover */
+}
+   
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color:#000000;
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="password"],
+        form input[type="submit"],
+        form input[type="reset"],
+        form select {
+            width: calc(100% - 22px); /* Adjust width */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color:#000000;
+        }
+
+        form label.gender-label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Grocery Store Registration Form</h1>
+	 <nav>
+            <a href="home2.html">Home</a>
+         </nav>
+    </header>
+
+    <div class="container">
+        <form name="register" action="register.jsp" onsubmit="return validateForm()">
+            <label for="id">Enter Customer Id:</label>
+            <input type="number" id="id" name="id" required/><br>
+
+            <label for="name">Enter Customer Name :</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z]+" required/><br>
+
+            <label for="uname">Enter the Username :</label>
+            <input type="text" id="uname" name="uname" pattern=".{6,}" required/><br>
+
+            <label for="pwd">Enter the Password :</label>
+            <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}" required/><br>
+
+            <label for="age">Enter Customer Age:</label>
+            <input type="number" id="age" name="age" required/><br>
+
+            <label for="addr">Enter Address:</label>
+            <input type="text" id="addr" name="addr" required/><br>
+
+            <label for="gender">Choose The Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>
+            <label for="phno">Enter Ph.No (10 digits):</label>
+            <input type="tel" id="phno" name="phno" pattern="[0-9]{10}" required/><br>
+
+            <input type="submit"/> 
+            <input type="reset"/>
+        </form>
+    </div>
+
+    <footer>
+        <p>Credentials: Gudepu Rashmitha<br>22761A0585</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var uname = document.forms["register"]["uname"].value;
+            var pwd = document.forms["register"]["pwd"].value;
+            var name = document.forms["register"]["name"].value;
+
+            if (uname.length < 6) {
+                alert("Username must be at least 6 characters long");
+                return false;
+            }
+
+            if (pwd.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false;
+            }
+
+            if (!pwd.match(/[a-z]/)) {
+                alert("Password must contain at least one lowercase letter");
+                return false;
+            }
+
+            if (!pwd.match(/[A-Z]/)) {
+                alert("Password must contain at least one uppercase letter");
+                return false;
+            }
+
+            if (!pwd.match(/\d/)) {
+                alert("Password must contain at least one number");
+                return false;
+            }
+
+            if (!pwd.match(/[!@#$%^&*()_+}{'\":;<>,.?/~`]/)) {
+                alert("Password must contain at least one special character");
+                return false;
+            }
+
+            if (!name.match(/^[a-zA-Z\s]*$/)) {
+                alert("Name must contain only alphabets");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+            font-family: Arial, sans-serif;
+           background-image: url('https://www.borivalibaniya.com/wp-content/uploads/2021/05/buy-online-groceries-online-grocery-store-in-borivali-borivali-baniya-order-grocery-online-with-smartphone-pay-with-credit-card.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        header {
+             background-color: rgba(0, 0, 0, 0.5);
+            color: #ffe6ff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+    	     display: flex;
+             justify-content: right;
+             margin-top: 20px;
+	    }
+
+	nav a {
+    	color: #fff;
+    	text-decoration: none;
+    	margin: 0 10px;
+    	transition: transform 0.2s ease; /* Adding transition for smooth transformation */
+}
+
+/* Adding hover effect */
+nav a:hover {
+    color: #ffd700; /* Change the color when hovering */
+    transform: scale(1.1); /* Scale the link slightly on hover */
+}
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .middle-section {
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        footer {
+           background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
